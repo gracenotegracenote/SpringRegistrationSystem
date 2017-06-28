@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Change status of registration</h1>
+        <form action="#" th:action="@{/changeStatus}" th:object="${event}" method="post">
+            <select th:field="*{regStatus}">
+                <option th:each="regStatus : ${T(de.blum.domain.Event.RegStatus).values()}"
+                        th:value="${regStatus}"
+                        th:text="${regStatus}">
+                </option>
+            </select>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+</body>
+</html>

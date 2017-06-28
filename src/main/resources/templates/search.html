@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Search Form</h1>
+        <form action="#" th:action="@{/search}" th:object="${guest}" method="post">
+            <p>Name: <input type="text" th:field="*{name}"/></p>
+            <p>E-Mail: <input type="email" th:field="*{email}"/></p>
+
+			<div th:if="${error}">
+				<p th:text="${error}" />
+			</div>
+
+            <p><input type="submit" value="Delete from guest list" /> <input type="reset" value="Reset" /></p>
+        </form>
+</body>
+</html>

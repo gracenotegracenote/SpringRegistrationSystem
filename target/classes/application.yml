@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/event_database?autoReconnect=true&useSSL=false&createDatabaseIfNotExist=true
+    driverClassName: org.mariadb.jdbc.Driver
+    username: root
+    password:
+      
+  jpa:
+    properties:
+      database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
